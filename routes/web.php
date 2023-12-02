@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,27 @@ require __DIR__.'/auth.php';
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [\APP\Http\Controllers\Admin\PanelController::class , 'index'] )->name('panel');
-    Route::resource('admin/users' , \APP\Http\Controllers\Admin\UserController::class);
+    Route::get('/admin', [PanelController::class , 'index'] );
+    Route::resource('admin\users' ,UserController::class);
 
 });
+
+
+// Route::get('/user/{username}', function($username){
+
+//     return $username;
+
+// });
+
+
+// Route::prefix('customer/{username}')->group(function ($username) {
+
+//     Route::get('/order',function($username){
+
+//         return 'hello'.' '. $username .' '.'your order 3';
+
+//     });
+
+    
+// });
+

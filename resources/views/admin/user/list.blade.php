@@ -30,16 +30,19 @@
 						</tr>
 						</thead>
 						<tbody>
+							@foreach ($users as $index=>$user)
+								
+							@endforeach
 							<tr>
-								<td class="text-center align-middle"></td>
+								<td class="text-center align-middle">{{$users->FirstItem()}}</td>
 								<td class="text-center align-middle">
 									<figure class="avatar avatar">
 										<img src="" class="rounded-circle" alt="image">
 									</figure>
 								</td>
-								<td class="text-center align-middle"></td>
-								<td class="text-center align-middle"></td>
-								<td class="text-center align-middle"></td>
+								<td class="text-center align-middle">{{$users->name}}</td>
+								<td class="text-center align-middle">{{$users->email}}</td>
+								<td class="text-center align-middle">{{$users->mobile}}</td>
 								<td class="text-center align-middle">
 									<a class="btn btn-outline-info" href="#">
 										نقش های کاربر
