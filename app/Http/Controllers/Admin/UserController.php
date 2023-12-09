@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users= User::paginate(15);
+        $users=User::paginate(15);
         return view('admin.user.list' , compact('users'));
         //
     }
@@ -66,3 +66,5 @@ class UserController extends Controller
         //
     }
 }
+
+
