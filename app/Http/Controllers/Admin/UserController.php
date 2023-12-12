@@ -24,6 +24,8 @@ class UserController extends Controller
     public function create()
     {
         //
+
+        return view('admin.user.create');
     }
 
     /**
@@ -32,6 +34,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        user::query()->create([
+            'name'=>$request->input('name'),
+            'email'=>$request->input('email'),
+            'mobile'=>$request->input('mobile'),
+            'password'=>$request->input('password'),
+            'photo'=>'',
+        ]);
+
+        return redirect()->back()->with('massage','کاربر جدید با موفقیت ثبت شد');
     }
 
     /**

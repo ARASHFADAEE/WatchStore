@@ -4,13 +4,17 @@
 @section('content')
 
 <main class="main-content">
+    <div class="row">
+
+    </div>
 	<div class="row">
 
-		<div class="card">
+		<div class="card" style="width: 100% !important">
             <div class="card-body">
                 <div class="container">
                     <h6 class="card-title">ایجاد کاربر</h6>
-                    <form method="POST" >
+                    <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group row">
                             <label  class="col-sm-2 col-form-label">نام و نام خانوادگی</label>
                             <div class="col-sm-10">
@@ -35,30 +39,12 @@
                                 <input type="text" class="form-control text-left" placeholder="پسورد" dir="rtl" name="password">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label  class="col-sm-2 col-form-label">واتس اپ</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control text-left"  dir="rtl" name="whatsapp">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label  class="col-sm-2 col-form-label">تلگرام</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control text-left"  dir="rtl" name="telegram">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label  class="col-sm-2 col-form-label">اینستاگرام</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control text-left"  dir="rtl" name="instagram">
-                            </div>
-                        </div>
-                        <div class="form-group row">
+                     <div class="form-group row">
 							<label class="col-sm-2 col-form-label" for="file"> آپلود عکس </label>
-							<input  class="col-sm-10" type="file" class="form-control-file" id="file">
+							<input  class="col-sm-10" type="file" class="form-control-file" id="file" name="file">
 						</div>
                         <div class="form-group row">
-							<button name="submit" type="button" class="btn btn-success btn-uppercase">
+							<button name="submit" type="submit" class="btn btn-success btn-uppercase">
 								<i class="ti-check-box m-r-5"></i> ذخیره
 							</button>
                           
